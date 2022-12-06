@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+
+<body>
+  <h1>Registration Page</h1>
+  <div class="reg">
+    <form name="myForm" method = "POST" action="/users/register" 
+    enctype="application/x-www-form-urlencoded">
+      <label for="username">Username</label>
+      <input type="text" id="username" required name="username">
+      <br>
+      <label for="email">Email</label>
+      <input type="email" id="email" required name="email">
+      <br>
+      <label>Password</label>
+      <input type="password" id="password" required name="password">
+      <br>
+      <label>Re-Enter Password</label>
+      <input type="password" id="confirm" required name="confirm">
+      <br>
+      <input type="checkbox" required>
+      <label>I am at least 13 years or older</label>
+
+      <br>
+      <input type="checkbox" required>
+      <label>I agree to </label>
+
+      <a href>
+        <label>Terms and Conditions</label>
+      </a>
+      <br><br>
+      <input type="submit" name="log" id="log" value="Submit">
+    </form>
+  </div>
+  <div id="message">
+    <p id="capital" class='invalid'>A <b>capital (uppercase)</b> letter</p>
+    <p id="number" class="invalid">A <b>number</b></p>
+    <p id="length" class="invalid">Minimum <b>8 characters</b></p>
+    <p id="special" class="invalid">Special Character <b>(/*-+!@#$^&*)</b></p>
+  </div>
+  <div id='message2'>
+    <p id="firstletter" class='invalid'>Begins with <b>a letter</b></p>
+    <p id="namelen" class="invalid">3 or more <b>alphanumeric values</b></p>
+  </div>
+  <div id='message3'>
+    <p id="confirmation" class='invalid'>Passwords <b>MATCH</b></p>
+  </div>
+</body>
+
+</html>

@@ -1,0 +1,13 @@
+<nav class="navbar">
+  <a class="active" href="/" id="home-button" class="navButtons">Home</a>
+  {{#if logged}}
+  <a id="logout" class="log-button">Log Out</a>
+  {{else}}
+  <a id="login" class="log-button" href="/login">Log In</a>
+  {{/if}}
+  <div class="search" method="POST">
+    <input type="text" id="search-text" placeholder="Search..." name="searchbar">
+    <button id="search-button" type="submit">➤<i class="fa fa-search"></i></button>
+  </div>
+  <a id="postimg" href="/postimage">Post Image</a>
+</nav>

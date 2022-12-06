@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<body>
+    <h1>Create a Post</h1> 
+<div class= "post">
+    <p>Fill out the information below:</p>
+    <form id = 'post-image' method="POST" enctype="multipart/form-data" action="/posts/createPost">
+       <label>Title: </label>
+       <br>
+       <input type="text" name="title" required>
+       <br><br>
+       <label>Description: </label>
+       <textarea name="description" rows="3" cols="50" required></textarea>
+       <br/>
+       <label>Upload an image:</label>
+       <input type="file" id="img" name="img" accept="image/*" required>
+       <br/>
+
+       <input type="checkbox" required>
+       <label>I agree to the </label>
+       <a href>
+        <label>Acceptable Use Policy</label>
+        </a>
+        <label> for uploading images</label>
+       <br/>
+       <br/>
+
+       <input type="submit" name= "log" id = "log" value = "Post">
+
+    </form>
+</div>
+</body>
+
+</html>

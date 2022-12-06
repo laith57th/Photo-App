@@ -1,0 +1,72 @@
+<div id="view-post">
+   <img id="image-post" src="/{{currentPost.photopath}}">
+   <div id="info-grid">
+      <header id="image-title">
+         <h2 id="image-title-text">{{currentPost.title}}</h2>
+      </header>
+      <div id="username-pfp">
+         <img id="empty-pfp" src="https://img.icons8.com/color/344/circled-user-male-skin-type-7--v1.png">
+         <div id="image-post-author">{{currentPost.username}}</div>
+      </div>
+      <div id="image-post-desc">{{currentPost.description}}</div>
+      <div id="image-post-date">{{currentPost.createdAt}}</div>
+   </div>
+   <div id="comment-container">
+      <div id="messages">
+         {{#each currentPost.comments}}
+         {{> comment this}}
+         {{/each}}
+      </div>
+      <form id="comment-box">
+            <input type="text" id="comment-text" placeholder="Enter your comment here..">
+            <button id="comment-button" type="submit">⮙<i class="fa-regular fa-comment"></i></button>
+      </form>
+   </div>
+</div>
+
+<script>
+    document.addEventListener('DOMContentLoaded', (event) => {
+        document.querySelectorAll('span[class=date-posted').forEach((postedDate) => {
+            postedDate.textContent = new Date(postedDate.textContent).toLocaleString();
+        });
+    });
+    function addMessage(data) {
+        let template = document.createElement('template');
+        template.innerHTML =
+            `<div id="message-${data.commentId}">
+                <strong class="author-text">@${data.username}</strong>
+                <span class="date-posted">${new Date().toLocaleString()}</span>
+                <div class="comment-text">${data.comment}</div>
+            </div>
+            
+            `;
+            document.getElementById('messages').firstChild.before(template.content.firstChild);
+    }
+    document.getElementById('comment-button').onclick = (event) => {
+        let commentText = document.getElementById('comment-text').value;
+        let postId = document.location.pathname.match(/\d+/g).map(Number)[0];
+        if(!commentText) {
+            return;
+        }
+        let fetchOptions = {
+            method: "POST",
+            headers: {
+                "Content-Type":"Application/json"
+            },
+            body: JSON.stringify({
+                comment:commentText,
+                postId,postId
+            })
+        }
+        fetch('/comments/create', fetchOptions)
+        .then((response) => response.json())
+        .then((data) => {
+            if(data.code == 1) {
+                addMessage(data);
+            } else {
+                addFlashFromFrontEnd(data.message, data.status);
+            }
+        })
+        .catch((err) => console.log(err));
+    }
+</script>

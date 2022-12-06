@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" type="text/css" href="/public/stylesheets/style.css">
+  <link rel="stylesheet" type="text/css" href="/public/css/loginstyle.css">
+  <link rel="stylesheet" type="text/css" href="/public/css/regStyle.css">
+  <link rel="stylesheet" type="text/css" href="/public/css/postimagestyle.css">
+  <link rel="stylesheet" type="text/css" href="/public/css/viewStyle.css">
+  <script defer src="../public/js/registrationJS.js"></script>
+  <script defer src="../public/js/frontEndJs.js"></script>
+  
+  <title>Laith's Photo App</title>
+</head>
+
+<body>
+  
+  {{> banner}}
+  {{> nav}}
+  {{{body}}}
+  {{#if (emptyObject messages)}}
+    {{> flashMessage}}
+  {{/if}}
+  {{> footer}}
+
+  {{#if logged}}
+  <script>
+    let element = document.getElementById('logout');
+    if (element) {
+      element.onclick = (event) => {
+        fetch('users/logout', {
+          method: "POST"
+        })
+        .then((data) => {
+          location.replace('/');
+        })
+      }
+    }
+  </script>
+  {{/if}}
+</body>
+
+</html>

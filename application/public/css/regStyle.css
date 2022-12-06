@@ -1,0 +1,94 @@
+.reg{  
+ width: 380px;  
+ overflow: hidden;  
+ margin: auto;  
+ margin: 20 0 0 450px;  
+ padding: 80px;  
+ background: rgb(255, 255, 255);  
+ border-radius: 15px ; 
+ text-align: center; 
+ font: bold;   
+}  
+
+#message {
+ visibility: hidden;
+ background: #f1f1f1;
+ color: #000;
+ position: absolute;
+ padding: 20px;
+ margin-top: 10px;
+ width : 100%;
+}
+
+#message p {
+ padding: 10px 35px;
+ font-size: 18px;
+}
+
+#message2 {
+ visibility: hidden;
+ width: 100%;
+ height: auto;
+ background: #f1f1f1;
+ color: #000;
+ position: absolute;
+ padding: 20px;
+ margin-top: 10px;
+}
+
+#message2 p {
+ padding: 10px 35px;
+ font-size: 18px;
+}
+
+#message3 {
+ visibility: hidden;
+ width: 100%;
+ height: auto;
+ background: #f1f1f1;
+ color: #000;
+ position: absolute;
+ padding: 20px;
+ margin-top: 10px;
+ z-index: 10;
+}
+
+#message3 p {
+ padding: 10px 35px;
+ font-size: 18px;
+}
+
+.valid {
+ color: green;
+}
+
+.valid:before {
+ position: relative;
+ left: -35px;
+}
+
+/* Add a red text color and an "x" icon when the requirements are wrong */
+.invalid {
+ color: red;
+}
+
+.invalid:before {
+ position: relative;
+ left: -35px;
+}
+
+label{  
+ color: #000000;  
+ font-size: 17px; 
+ font: bold;
+}  
+
+#log{  
+ width: 100px;  
+ height: 30px;  
+ border: none;
+ border-radius: 17px;  
+ padding-left: 7px;  
+ color: rgb(255, 255, 255);
+ background-color: rgb(17, 0, 255);
+}  

@@ -1,0 +1,25 @@
+h2{
+ text-align:center;  
+ color: black;
+ padding: 20px; 
+}
+
+article{
+ width: 380px;  
+ overflow: hidden;  
+ margin: auto;  
+ margin: 20 0 0 450px;  
+ padding: 80px;  
+ background: rgb(255, 255, 255);  
+ border-radius: 15px ; 
+ text-align: center; 
+ font: bold;  
+}
+
+img {
+ display: block;
+ margin-left: auto;
+ margin-right: auto;
+ width: 100%;
+ height: auto;
+} 

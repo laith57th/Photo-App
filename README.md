@@ -1,6 +1,6 @@
-## Description:
+# Description:
 
-This is a simple photo application that allows users to register, login, post images and comments to their account. The application uses bcrypt to hash passwords and includes server side authentication for registered users for the login feature.
+## This is a simple photo application that allows users to register, login, post images and comments to their account. The application uses bcrypt to hash passwords and includes server side authentication for registered users for the login feature.
 
 
 # Build/Run Instructions

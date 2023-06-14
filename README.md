@@ -20,5 +20,5 @@
 
 ## Notes
 1. Must change the password to match the root host password in the following files:
-   Photo-App/application/config/database.js
-   Photo-App/application/bin/dbloader
+* Photo-App/application/config/database.js
+* Photo-App/application/bin/dbloader

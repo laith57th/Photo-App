@@ -33,7 +33,7 @@ PostModel.search = (searchTerm) => {
 }
 
 PostModel.getNRecentPosts = (numberOfPosts) => {
-   let baseSQL = "SELECT id, title, description, thumbnail, createdAt FROM posts ORDER BY createdAt DESC LIMIT ?";
+   let baseSQL = "SELECT id, title, description, thumbnail, createAt FROM posts ORDER BY createAt DESC LIMIT ?";
    return db.query(baseSQL,
       [numberOfPosts]).then(([results, fields]) => {
          return Promise.resolve(results);
@@ -42,7 +42,7 @@ PostModel.getNRecentPosts = (numberOfPosts) => {
 }
 
 PostModel.getPostById = (postId) =>{
-   let baseSQL = `SELECT u.username, p.title, p.description, p.photopath, p.createdAt
+   let baseSQL = `SELECT u.username, p.title, p.description, p.photopath, p.createAt
   FROM users u
   JOIN posts p
   ON u.id=fk_userId

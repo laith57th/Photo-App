@@ -7,7 +7,12 @@
 
 ## Build Instructions
 1. cd application (if at the root)
-2. npm start
+2. npm install
+3. npm i hbs
+4. npm i promise
+5. npm i express
+6. npm run builddb //This builds the database tables
+7. npm start //This runs the app on localhost:3000/
 
 ## Run Instructions
 1. npm run

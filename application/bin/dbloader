@@ -14,11 +14,11 @@ function displayWarningMessage(warning) {
 
 async function getConnection() {
   return await mysql.createConnection({
-    host: "localhost",
+    host: "127.0.0.1",
     //TODO make sure to change to the user you want to use
     user: "root", //Your DB username
     //TODO make sure to change to the correct password for your user.
-    password: "change this to root pwd", //Your DB password
+    password: "SQL1king", //Your DB password
   });
 }
 
